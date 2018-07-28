@@ -7,10 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="javascript/game.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
 </head>
 <body>
     
@@ -41,9 +39,9 @@
     </div>
     <div class="row">
         <div class="col-sm-3" id="randomNumber">
-            <p>39</p>
+            
         </div>
-        <div class="col-sm-1" id="winLoss">
+        <div class="col-sm-2" id="winLoss">
             <p>
                 Wins: 0
             </p>
@@ -54,16 +52,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="crystalImage" id="red">
+        <button class="btn crystalImage userChoice" id="red">
+
+        </button>
+        <div class="btn crystalImage userChoice" id="blue">
 
         </div>
-        <div class="crystalImage" id="blue">
+        <div class="btn crystalImage userChoice" id="yellow">
 
         </div>
-        <div class="crystalImage" id="yellow">
-
-        </div>
-        <div class="crystalImage" id="green">
+        <div class="btn crystalImage userChoice" id="green">
 
         </div>
     </div>
@@ -72,14 +70,16 @@
             <p>
                 Your total score is:
             </p>
+            
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4" id="scoreNumber">
-
+            
         </div>
     </div>
 </div>
+
 
 </body>
 </html>
