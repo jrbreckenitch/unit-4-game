@@ -5,17 +5,85 @@ var losses = 0;
 
 var userScore = 0;
 
+var winDiv = $("<p>'You Won!'</p>");
+
+var lossDiv = $("<p>'You Lost!'</p>");
+
+// var scoreCheck = function() {
+//     if (userScore === random) {
+//         wins++;
+//         $("#wins").text("Wins:" + wins);
+//         $("#winLoss").append(winDiv);
+//         jQuery.ready();
+    
+//     }
+//     else if (userScore > random) {
+//         losses++;
+//         $("#wins").text("Losses:" + losses);
+//         $("#winLoss").append(lossDiv);
+//         jQuery.ready();
+//     }
+// }
+
+
+
 $(document).ready(function() {
+
+    // var wins = 0;
+
+    // var losses = 0;
+
+    // var userScore = 0;
+
+    // var winDiv = $("<p>'You Won!'</p>");
+
+    // var lossDiv = $("<p>'You Lost!'</p>");
+
+    // var scoreCheck = function() {
+    //     if (userScore === random) {
+    //         wins++;
+    //         $("#wins").text("Wins:" + wins);
+    //         $("#winLoss").append(winDiv);
+    //         reset();
+        
+    //     }
+    //     else if (userScore > random) {
+    //         losses++;
+    //         $("#wins").text("Losses:" + losses);
+    //         $("#winLoss").append(lossDiv);
+    //         reset();
+    //     }
+    // }
+
     
     var newDiv = $("<div>");
     var random = (Math.floor(19 + Math.random() * 120));
     newDiv.text(random);
-    $("#randomNumber").append(newDiv);
+    $("#randomNumber").html(newDiv);
     console.log(random)
     var redRandom = (Math.floor(1 + Math.random() * 12));
     var blueRandom = (Math.floor(1 + Math.random() * 12));
     var yellowRandom = (Math.floor(1 + Math.random() * 12));
     var greenRandom = (Math.floor(1 + Math.random() * 12));
+
+    // var reset = function() {
+    //     var random = (Math.floor(19 + Math.random() * 120));
+    //     var redRandom = (Math.floor(1 + Math.random() * 12));
+    //     var blueRandom = (Math.floor(1 + Math.random() * 12));
+    //     var yellowRandom = (Math.floor(1 + Math.random() * 12));
+    //     var greenRandom = (Math.floor(1 + Math.random() * 12));
+    //     var newDiv = $("<div>");
+    //     var userScore = 0;
+    //     newDiv.text(random);
+    //     $("#randomNumber").html(newDiv);
+    //     scoreDiv.text(userScore);
+    //     $("#scoreNumber").html(scoreDiv);
+    //     console.log(random);
+    //     console.log(redRandom);
+    //     console.log(blueRandom);
+    //     console.log(yellowRandom);
+    //     console.log(greenRandom);
+    // }
 
     // if (redRandom === blueRandom || redRandom === yellowRandom || redRandom === greenRandom) {
     //     redRandom = (Math.floor(1 + Math.random() * 12));
@@ -37,36 +105,48 @@ $(document).ready(function() {
 
     var scoreDiv = $("<div>");
 
+    // var winDiv = $("<p>'You Won!'</p>");
+
+    // var lossDiv = $("<p>'You Lost!'</p>");
+
     $("#red").on("click", function() {
         // userScore.text(userRandom);
-        userScore = redRandom;
+        // userScore = redRandom;
+        // totalOfGuesses.push(redRandom);
+        // for (i = 0 ;i < totalOfGuesses.length; i++) {
+        //     userScore = i + userScore;
+        // }
+        userScore = redRandom + userScore;
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        scoreCheck();
     });
     $("#blue").on("click", function() {
-        // userScore.text(userRandom);
-        userScore = blueRandom;
+        userScore = blueRandom + userScore;
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        scoreCheck();
     });
     $("#yellow").on("click", function() {
-        // userScore.text(userRandom);
-        userScore = yellowRandom;
+        userScore = yellowRandom + userScore;
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        scoreCheck();
     });
     $("#green").on("click", function() {
-        // userScore.text(userRandom);
-        userScore = greenRandom;
+        userScore = greenRandom + userScore;
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        scoreCheck();
     });
-    
+
 });
+
+
 
 // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
 // ...
@@ -83,22 +163,6 @@ $(document).ready(function() {
 // var losses = 0;
 
 // var userScore = 0;
-
-// make user score an array ... then use a for loop to add the numbers
-// if numbers > than random # player loses = to player wins
-
-// $(document).ready(function() {
-
-// $(".userChoice").on("click", function() {
-    
-//     var userRandom = (Math.floor(1 + Math.random() * 12));
-//     // userScore.text(userRandom);
-//     userScore = userRandom;
-//     console.log(userScore);
-//   });
-
-// });
-// crystal will generate random value each time it is clicked
 
 // game restarts whenever player wins or loses and updates win/losses
 
