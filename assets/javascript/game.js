@@ -1,4 +1,7 @@
 // generate random number at start of each game between 19 - 120
+
+$(document).ready(function() {
+
 var wins = 0;
 
 var losses = 0;
@@ -9,81 +12,65 @@ var winDiv = $("<p>'You Won!'</p>");
 
 var lossDiv = $("<p>'You Lost!'</p>");
 
-// var scoreCheck = function() {
-//     if (userScore === random) {
-//         wins++;
-//         $("#wins").text("Wins:" + wins);
-//         $("#winLoss").append(winDiv);
-//         jQuery.ready();
-    
-//     }
-//     else if (userScore > random) {
-//         losses++;
-//         $("#wins").text("Losses:" + losses);
-//         $("#winLoss").append(lossDiv);
-//         jQuery.ready();
-//     }
-// }
+var scoreDiv = $("<div>");
 
+var newDiv = $("<div>");
 
+var random = Math.floor(Math.random() * (120 - 19 + 1) + 19);
 
-$(document).ready(function() {
+// var random = (Math.floor(19 + Math.random() * 120));
+var redRandom = (Math.floor(1 + Math.random() * 12));
+var blueRandom = (Math.floor(1 + Math.random() * 12));
+var yellowRandom = (Math.floor(1 + Math.random() * 12));
+var greenRandom = (Math.floor(1 + Math.random() * 12));
 
-    // var wins = 0;
+newDiv.text(random);
+$("#randomNumber").html(newDiv);
 
-    // var losses = 0;
+scoreDiv.text(userScore);
+$("#scoreNumber").html(scoreDiv);
 
-    // var userScore = 0;
+console.log(random)
+console.log(redRandom);
+console.log(blueRandom);
+console.log(yellowRandom);
+console.log(greenRandom);
 
-    // var winDiv = $("<p>'You Won!'</p>");
-
-    // var lossDiv = $("<p>'You Lost!'</p>");
-
-    // var scoreCheck = function() {
-    //     if (userScore === random) {
-    //         wins++;
-    //         $("#wins").text("Wins:" + wins);
-    //         $("#winLoss").append(winDiv);
-    //         reset();
-        
-    //     }
-    //     else if (userScore > random) {
-    //         losses++;
-    //         $("#wins").text("Losses:" + losses);
-    //         $("#winLoss").append(lossDiv);
-    //         reset();
-    //     }
-    // }
-
-    
-    var newDiv = $("<div>");
-    var random = (Math.floor(19 + Math.random() * 120));
+var reset = function() {
+    random = Math.floor(Math.random() * (120 - 19 + 1) + 19);
+    // random = (Math.floor(19 + Math.random() * 120));
+    redRandom = (Math.floor(1 + Math.random() * 12));
+    blueRandom = (Math.floor(1 + Math.random() * 12));
+    yellowRandom = (Math.floor(1 + Math.random() * 12));
+    greenRandom = (Math.floor(1 + Math.random() * 12));
+    newDiv = $("<div>");
+    userScore = 0;
     newDiv.text(random);
     $("#randomNumber").html(newDiv);
-    console.log(random)
-    var redRandom = (Math.floor(1 + Math.random() * 12));
-    var blueRandom = (Math.floor(1 + Math.random() * 12));
-    var yellowRandom = (Math.floor(1 + Math.random() * 12));
-    var greenRandom = (Math.floor(1 + Math.random() * 12));
+    scoreDiv.text(userScore);
+    $("#scoreNumber").html(scoreDiv);
+    // $( "#winLoss" ).empty();
+    console.log(random);
+    console.log(redRandom);
+    console.log(blueRandom);
+    console.log(yellowRandom);
+    console.log(greenRandom);
+}
 
-    // var reset = function() {
-    //     var random = (Math.floor(19 + Math.random() * 120));
-    //     var redRandom = (Math.floor(1 + Math.random() * 12));
-    //     var blueRandom = (Math.floor(1 + Math.random() * 12));
-    //     var yellowRandom = (Math.floor(1 + Math.random() * 12));
-    //     var greenRandom = (Math.floor(1 + Math.random() * 12));
-    //     var newDiv = $("<div>");
-    //     var userScore = 0;
-    //     newDiv.text(random);
-    //     $("#randomNumber").html(newDiv);
-    //     scoreDiv.text(userScore);
-    //     $("#scoreNumber").html(scoreDiv);
-    //     console.log(random);
-    //     console.log(redRandom);
-    //     console.log(blueRandom);
-    //     console.log(yellowRandom);
-    //     console.log(greenRandom);
-    // }
+var scoreCheck = function() {
+    if (userScore === random) {
+        $("#winLoss").html(winDiv);
+        wins++;
+        $("#wins").text("Wins:" + wins);
+        reset();
+    }
+    else if (userScore > random) {
+        $("#winLoss").html(lossDiv);
+        losses++;
+        $("#losses").text("Losses:" + losses);
+        reset();
+    }
+}
 
     // if (redRandom === blueRandom || redRandom === yellowRandom || redRandom === greenRandom) {
     //     redRandom = (Math.floor(1 + Math.random() * 12));
@@ -98,17 +85,7 @@ $(document).ready(function() {
     //     redRandom = (Math.floor(1 + Math.random() * 12));
     // }
 
-    console.log(redRandom);
-    console.log(blueRandom);
-    console.log(yellowRandom);
-    console.log(greenRandom);
-
-    var scoreDiv = $("<div>");
-
-    // var winDiv = $("<p>'You Won!'</p>");
-
-    // var lossDiv = $("<p>'You Lost!'</p>");
-
+    
     $("#red").on("click", function() {
         // userScore.text(userRandom);
         // userScore = redRandom;
@@ -120,6 +97,7 @@ $(document).ready(function() {
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        $( "#winLoss" ).empty();
         scoreCheck();
     });
     $("#blue").on("click", function() {
@@ -127,6 +105,7 @@ $(document).ready(function() {
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        $( "#winLoss" ).empty();
         scoreCheck();
     });
     $("#yellow").on("click", function() {
@@ -134,6 +113,7 @@ $(document).ready(function() {
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        $( "#winLoss" ).empty();
         scoreCheck();
     });
     $("#green").on("click", function() {
@@ -141,6 +121,7 @@ $(document).ready(function() {
         scoreDiv.text(userScore);
         $("#scoreNumber").html(scoreDiv);
         console.log(userScore);
+        $( "#winLoss" ).empty();
         scoreCheck();
     });
 

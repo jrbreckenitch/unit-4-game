@@ -5,32 +5,38 @@ body {
 #gameTitle {
     background-color: #e67300;
     color: white;
+    margin: 3px;
 }
 
 #instructionBox {
     background-color: #ffaa80;
     color: green;
+    margin: 3px;
+
 }
 
 #randomNumber {
     background-color: #66cc66;
     color: #9900cc;
+    margin: 3px;
 }
 
-#winLoss {
+#scoreTracker {
     background-color: #4dffff;
     color: black;
+    margin: 3px;
 }
 
 #scoreText {
     background-color: #00b3b3;
     color: white;
+    margin: 3px;
 }
 
 #scoreNumber {
     width: 100%;
     height: 200px;
-    margin-top: 2px;
+    margin: 3px;
     background-color: #00b3b3;
     color: white;
 }
@@ -41,7 +47,7 @@ body {
     border-style: solid;
     padding: 2px;
     float: left;
-    margin: 2px;
+    margin: 3px;
 }
 
 #red {
