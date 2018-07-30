@@ -48,20 +48,27 @@ body {
     padding: 2px;
     float: left;
     margin: 3px;
+    background-size: 100%;
+    /* position: relative; */
 }
 
 #red {
-    background-color: red;
+    /* background-color: red; */
+    background-image: url(../images/spidermanLogo.jpg);
 }
 
 #blue {
-    background-color: blue;
+    /* background-color: blue; */
+    background-image: url(../images/ironmanLogo.jpg);
 }
 
 #yellow {
-    background-color: yellow;
+    /* background-color: yellow; */
+    background-image: url(../images/blackpantherLogo.jpg);
 }
 
 #green {
-    background-color: green;
+    /* background-color: green; */
+    background-image: url(../images/antmanLogo.jpg);    
+
 }
